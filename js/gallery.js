@@ -10,19 +10,21 @@ function createGalleryMarkup(galleryItems) {
     .map(({ preview, original, description }) => {
       return `
     <li class="gallery__item">
-  <a
+        <a
     class="gallery__link"
-    href="${original}"
-  >
-    <img
+    href="${original}">
+      <img
       class="gallery__image"
       src="${preview}"
       data-source="${original}"
       alt="${description}"
-    />
-  </a>
-</li>
+      />
+        </a>
+    </li>
     `;
     })
     .join('');
+}
+function fdsfds() {
+  console.log('hello world');
 }
