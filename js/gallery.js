@@ -1,9 +1,23 @@
 import galleryItems from './gallery-items.js';
 
 const galleryContiner = document.querySelector('.js-gallery');
+const lightboxEl = document.querySelector('.js-lightbox');
+
 const galleryMarkup = createGalleryMarkup(galleryItems);
 
+galleryContiner.addEventListener('click', onGalleryClick);
+
 galleryContiner.insertAdjacentHTML('beforeend', galleryMarkup);
+
+function onGalleryClick(event) {
+  if (event.target.nodeName !== 'IMG') {
+    return;
+  }
+
+  event.preventDefault();
+
+  lightboxEl.classList.add('is-open');
+}
 
 function createGalleryMarkup(galleryItems) {
   return galleryItems
@@ -24,7 +38,4 @@ function createGalleryMarkup(galleryItems) {
     `;
     })
     .join('');
-}
-function fdsfds() {
-  console.log('hello world');
 }
