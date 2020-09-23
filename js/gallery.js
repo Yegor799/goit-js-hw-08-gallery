@@ -2,6 +2,7 @@ import galleryItems from './gallery-items.js';
 
 const galleryContiner = document.querySelector('.js-gallery');
 const lightboxEl = document.querySelector('.js-lightbox');
+const lightBoxImageEl = document.querySelector('.lightbox__image');
 
 const galleryMarkup = createGalleryMarkup(galleryItems);
 
@@ -17,6 +18,7 @@ function onGalleryClick(event) {
   event.preventDefault();
 
   lightboxEl.classList.add('is-open');
+  lightBoxImageEl.src = event.target.dataset.source;
 }
 
 function createGalleryMarkup(galleryItems) {
